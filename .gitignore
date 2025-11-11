@@ -1,0 +1,21 @@
+# ============================
+# AGRI-SMART PROJECT (.gitignore)
+# ============================
+
+# === Environnements virtuels ===
+venv/
+.env/
+env/
+.venv/
+
+# === Streamlit & cache ===
+.streamlit/
+__pycache__/
+*/__pycache__/
+*/.streamlit/
+*/.pytest_cache/
+
+# === IDE / éditeur ===
+.vscode/
+.idea/
+*.code-workspace
