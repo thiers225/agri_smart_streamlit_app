@@ -19,3 +19,26 @@ __pycache__/
 .vscode/
 .idea/
 *.code-workspace
+
+# === Python ===
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# === Fichiers temporaires ===
+*.log
+*.tmp
+*.bak
+*~
+
+# === Backups de modèles (optionnel) ===
+# Décommentez si vous ne voulez pas versionner les modèles
+# models/*.pkl
+# models/*.keras
+# models/*.h5

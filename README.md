@@ -1,123 +1,175 @@
-# 🌾 AGRI-SMART — Système intelligent de prévision et de recommandation agricole basé sur l’IA et la Data Science
+# 🌽 AGRI SMART - Assistant Intelligent Maïs
 
-> **Projet académique et de recherche appliquée — Master Big Data & Intelligence Artificielle (2024–2025)**  
-> Auteur : **N’DRI N’da Yao Thierry**
+Application Streamlit pour la détection de maladies du maïs et la prédiction de rendement.
 
----
+## 📋 Versions des Packages
 
-## 📘 Présentation du projet
+Versions actuelles (enregistrées le 2025-11-22) :
+- **Python**: 3.12.2
+- **scikit-learn**: 1.7.2
+- **tensorflow**: 2.20.0
+- **streamlit**: 1.51.0
+- **numpy**: 2.3.4
+- **pandas**: 2.3.3
+- **joblib**: 1.5.2
+- **pillow**: 12.0.0
 
-**AGRI-SMART** est un système intelligent de prévision et de recommandation agricole basé sur l’intelligence artificielle et la science des données.  
-Son objectif est de contribuer à la **productivité et à la résilience de l’agriculture ivoirienne**, à travers :
+## 🚀 Installation
 
-1. 🌽 **La prédiction du rendement du maïs** à partir de données agronomiques historiques  
-2. 🌿 **La détection automatisée de maladies du maïs** à partir d’images de feuilles  
-3. ☁️ **L’intégration cloud et IA** pour centraliser, traiter et valoriser les données agricoles
-
----
-
-## 🎯 Objectifs
-
-### 🎯 Objectif principal
-> Développer un système intelligent capable d’optimiser la productivité du maïs en Côte d’Ivoire  
-> grâce à l’IA, la data science et le cloud computing.
-
-### 🧩 Objectifs spécifiques
-- Déployer une **infrastructure cloud multi-source** pour le stockage et le traitement des données agricoles (Data Lakehouse + ELT)
-- Développer un **modèle de prédiction du rendement** (Random Forest / XGBoost)
-- Concevoir un **modèle de détection de maladies du maïs** (CNN / EfficientNet)
-- Intégrer le tout dans une **application Streamlit** pour une utilisation simple et interactive
-
----
-
-## 🌍 Contexte
-
-L’agriculture représente **23 % du PIB** et **43,5 % des emplois** en Côte d’Ivoire.  
-Cependant, le secteur reste vulnérable :
-- aux aléas climatiques ☁️  
-- aux maladies et parasites 🪲  
-- et à la faible digitalisation des pratiques agricoles ⚙️  
-
-**AGRI-SMART** s’inscrit dans la volonté de numériser ce secteur vital, en apportant une solution **locale, intelligente et open-source**.
-
----
-
-## 🧠 Données utilisées
-
-### 📊 Données tabulaires — rendement et variables agronomiques
-Provenant de l’**IITA (International Institute of Tropical Agriculture)** :
-- *Grain Yield and Agronomic Traits of International Maize Trials – Côte d’Ivoire (1989–1999)*
-- Variables : `PL_HT`, `E_HT`, `E_HARV`, `BLIGHT`, `STRIGA`, `BORER`, `YIELD`, `CURV`
-
-### 🖼️ Données images — détection de maladies
-Dataset Kaggle :  
-[📁 Corn or Maize Leaf Disease (PlantVillage/PlantDoc)](https://www.kaggle.com/code/mdismielhossenabir/corn-or-maize-leaf-disease)
-
-| Classe | Description | Nombre d’images |
-|---------|--------------|----------------|
-| 🌿 Healthy | Feuilles saines | 1 162 |
-| 🍂 Blight | Brûlure foliaire | 1 146 |
-| 🟤 Common Rust | Rouille commune | 1 306 |
-| ⚫ Gray Leaf Spot | Tache grise des feuilles | 574 |
-
----
-
-## 🧮 Modélisation & résultats
-
-### 🌽 Prédiction du rendement
-| Modèle | RMSE ↓ | R² ↑ |
-|---------|--------|------|
-| Régression linéaire | 732.95 | 0.598 |
-| Random Forest | 675.28 | 0.659 |
-| **XGBoost** | **638.43** | **0.695** ✅ |
-
-### 🦠 Détection de maladies (images)
-| Modèle | Précision (%) | Rappel (%) | F1-score |
-|---------|----------------|-------------|-----------|
-| CNN simple | 86.4 | 85.7 | 86.0 |
-| **EfficientNetB0** | **92.8** | **91.6** | **92.2** ✅ |
-
----
-
-## 💻 Application Streamlit
-
-L’application **AGRI-SMART App** est une interface interactive en deux volets :
-1. 🌾 **Prédiction du rendement**
-2. 🦠 **Détection de maladies (analyse d’image)**
-
-### ⚙️ Lancer localement
-
+### 1. Cloner le projet
 ```bash
-# Créer et activer un environnement virtuel
+cd agri_smart_streamlit_app
+```
+
+### 2. Créer un environnement virtuel (recommandé)
+```bash
 python -m venv venv
-source venv/bin/activate
+venv\Scripts\activate  # Windows
+```
 
-# Installer les dépendances
+### 3. Installer les dépendances
+```bash
 pip install -r requirements.txt
+```
 
-# Lancer l'application Streamlit
-cd streamlit_app
+## 🎯 Utilisation
+
+### Lancer l'application
+```bash
 streamlit run app.py
 ```
 
-➡️ **Ouvrir dans le navigateur :** [http://localhost:8501](http://localhost:8501)
+L'application s'ouvrira dans votre navigateur à l'adresse `http://localhost:8501`
 
-## ⚙️ Technologies principales
+## 📁 Structure du Projet
 
-| Domaine | Outils / Librairies |
-|----------|----------------------|
-| **Langage** | Python 3.12 |
-| **Data** | pandas, numpy |
-| **Machine Learning** | scikit-learn, XGBoost |
-| **Deep Learning (images)** | TensorFlow, Keras, EfficientNet |
-| **Visualisation** | matplotlib, seaborn |
-| **Application Web** | Streamlit |
-| **Cloud (optionnel)** | Google Cloud, GCS, Airflow |
-| **Versioning** | Git & GitHub |
+```
+agri_smart_streamlit_app/
+├── app.py                          # Application Streamlit principale
+├── requirements.txt                # Dépendances Python
+├── regenerate_model.py             # Script pour régénérer le modèle
+├── save_model_with_metadata.py     # Utilitaire de sauvegarde avec métadonnées
+├── VERSION_MANAGEMENT.md           # Guide de gestion des versions
+├── models/
+│   ├── maize_mobilenetv2_model.keras      # Modèle de détection de maladies
+│   ├── yield_prediction_model.pkl         # Modèle de prédiction de rendement
+│   ├── model_input_columns.pkl            # Colonnes d'entrée du modèle
+│   └── model_metadata.json                # Métadonnées du modèle (versions)
+└── README.md
+```
 
-## 📈 Résultats attendus
+## 🔧 Résolution de Problèmes
 
-- ✅ **Modèle fiable de prédiction du rendement**
-- ✅ **Modèle CNN performant pour la détection de maladies**
-- ✅ **Application Streamlit interactive et intuitive**
-- ✅ **Documentation et pipeline reproductibles**
+### ⚠️ Erreur "Can't get attribute '_RemainderColsList'"
+
+Cette erreur indique une incompatibilité de version de scikit-learn.
+
+**Solution 1 : Régénérer le modèle**
+```bash
+python regenerate_model.py
+```
+
+**Solution 2 : Installer la version exacte**
+```bash
+pip install scikit-learn==1.7.2
+```
+
+### ⚠️ Le modèle ne se charge pas
+
+1. Vérifiez que les fichiers existent dans `models/` :
+   - `yield_prediction_model.pkl`
+   - `model_input_columns.pkl`
+
+2. Vérifiez les versions dans `models/model_metadata.json`
+
+3. Régénérez le modèle si nécessaire
+
+## 🔄 Workflow de Développement
+
+### Pour Entraîner un Nouveau Modèle
+
+1. **Entraînez votre modèle** (dans Google Colab ou localement)
+
+2. **Sauvegardez avec métadonnées** :
+```python
+from save_model_with_metadata import save_model_with_metadata
+
+# Après l'entraînement
+save_model_with_metadata(model, X.columns.tolist())
+```
+
+3. **Vérifiez les métadonnées** :
+```bash
+cat models/model_metadata.json
+```
+
+### Pour Déployer
+
+1. **Vérifiez les versions** :
+```bash
+pip list | grep -E "scikit-learn|tensorflow|streamlit"
+```
+
+2. **Testez localement** :
+```bash
+streamlit run app.py
+```
+
+3. **Vérifiez que les deux onglets fonctionnent** :
+   - 🦠 Détection de Maladies
+   - 📈 Prédiction de Rendement
+
+## 📊 Fonctionnalités
+
+### 🦠 Détection de Maladies
+- Upload d'image de feuille de maïs
+- Détection de 4 classes :
+  - Helminthosporiose (Blight)
+  - Rouille Commune (Common Rust)
+  - Tache Grise (Gray Leaf Spot)
+  - Saine (Healthy)
+- Affichage de la confiance et des probabilités détaillées
+- Seuil de confiance à 60%
+
+### 📈 Prédiction de Rendement
+- Entrée de caractéristiques agronomiques :
+  - Hauteur de la plante (cm)
+  - Hauteur de l'épi (cm)
+  - Jours jusqu'à l'apparition des soies
+  - Zone agro-écologique
+  - Scores de rouille et d'helminthosporiose
+- Prédiction du rendement en kg/ha
+
+## 🛠️ Commandes Utiles
+
+```bash
+# Voir les versions installées
+pip list
+
+# Mettre à jour requirements.txt
+pip freeze > requirements.txt
+
+# Régénérer le modèle
+python regenerate_model.py
+
+# Tester le chargement du modèle
+python -c "from save_model_with_metadata import load_model_with_version_check; m, c, w = load_model_with_version_check(); print(w)"
+
+# Nettoyer le cache Streamlit
+streamlit cache clear
+```
+
+## 📚 Documentation
+
+- [VERSION_MANAGEMENT.md](VERSION_MANAGEMENT.md) - Guide complet de gestion des versions
+- [save_model_with_metadata.py](save_model_with_metadata.py) - Utilitaire de sauvegarde
+
+## 👨‍💻 Développeur
+
+Projet AGRI SMART - Mémoire eBIHAR
+
+## 📝 Notes
+
+- Le modèle de rendement actuel est basé sur des données synthétiques pour démonstration
+- Pour un modèle de production, réentraînez avec vos données réelles
+- Assurez-vous toujours que les versions de packages correspondent entre l'entraînement et le déploiement

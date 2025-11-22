@@ -1,0 +1,20 @@
+{
+  "model_version": "1.0.0",
+  "created_date": "2025-11-22T03:16:44.613105",
+  "python_version": "3.12.2",
+  "package_versions": {
+    "scikit-learn": "1.7.2",
+    "joblib": "1.5.2",
+    "pandas": "2.3.3",
+    "numpy": "2.3.4"
+  },
+  "input_columns": [
+    "PL_HT",
+    "E_HT",
+    "DY_SK",
+    "AEZONE",
+    "RUST",
+    "BLIGHT"
+  ],
+  "model_type": "Pipeline"
+}
