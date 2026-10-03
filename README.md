@@ -2,6 +2,10 @@
 
 Application Streamlit pour la détection de maladies du maïs et la prédiction de rendement.
 
+**Statut : prototype.** Le modèle de rendement décrit dans ce dépôt est entraîné sur des données synthétiques à des fins de démonstration. Il ne constitue pas une estimation validée pour des parcelles réelles.
+
+Une autre implémentation, présentée sur mon profil, est disponible dans [new_app_streamlit_agri_smart](https://github.com/thiers225/new_app_streamlit_agri_smart). Ce dépôt conserve ses propres guides de compatibilité et de gestion des versions.
+
 ## 📋 Versions des Packages
 
 Versions actuelles (enregistrées le 2025-11-22) :
@@ -18,6 +22,7 @@ Versions actuelles (enregistrées le 2025-11-22) :
 
 ### 1. Cloner le projet
 ```bash
+git clone https://github.com/thiers225/agri_smart_streamlit_app.git
 cd agri_smart_streamlit_app
 ```
 
